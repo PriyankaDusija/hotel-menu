@@ -8,10 +8,10 @@ workflows:
       - test:
           requires:
             - build
-      - deployToStage:
-          requires:
-            - build
-            - test
+#      - deployToStage:
+#          requires:
+#            - build
+#            - test
 
 jobs:
   build:
