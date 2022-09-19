@@ -1,0 +1,14 @@
+
+version: 2.1
+workflows:
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deployToStage:
+          requires:
+            - build
+            - test
