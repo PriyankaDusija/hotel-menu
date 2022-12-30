@@ -17,8 +17,8 @@ public class Items {
     private String name;
 
     @NotNull
-    @Column(name = "type")
-    private String type;
+    @Column(name = "category")
+    private String category;
 
     @NotNull
     @Column(name = "price")
@@ -27,16 +27,16 @@ public class Items {
     public Items() {
     }
 
-    public Items(long id, String name, String type, double price) {
+    public Items(long id, String name, String category, double price) {
         this.id = id;
         this.name = name;
-        this.type = type;
+        this.category = category;
         this.price = price;
     }
 
-    public Items(String name, String type, double price) {
+    public Items(String name, String category, double price) {
         this.name = name;
-        this.type = type;
+        this.category = category;
         this.price = price;
     }
 
@@ -48,8 +48,8 @@ public class Items {
         return name;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
     public double getPrice() {
@@ -64,8 +64,8 @@ public class Items {
         this.name = name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setPrice(double price) {

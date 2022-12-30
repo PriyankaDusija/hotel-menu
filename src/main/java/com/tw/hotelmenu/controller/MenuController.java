@@ -25,4 +25,11 @@ public class MenuController {
     {
         return menuService.addItem(menuItem);
     }
+
+    @GetMapping("/menu/{category}")
+    public List<Items> getCategoryMenu(@PathVariable("category") String category)
+    {
+        List<Items> categoryItems = menuService.getCategoryItems(category);
+        return categoryItems;
+    }
 }

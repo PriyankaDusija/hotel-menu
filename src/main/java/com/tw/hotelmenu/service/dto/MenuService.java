@@ -23,5 +23,6 @@ public class MenuService {
         return menuRepository.save(newItem);
     }
 
-
+    public List<Items> getCategoryItems(String category) { return menuRepository.findByCategory(category);
+    }
 }

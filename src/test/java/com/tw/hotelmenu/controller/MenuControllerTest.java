@@ -37,4 +37,18 @@ class MenuControllerTest {
 
         verify(menuService,times(1)).getAllItems();
     }
+
+    @Test
+    void shouldReturnCategoryMenuItems() throws Exception {
+        List<Items> listofItems = Arrays.asList(
+                new Items("idli","breakfast",80.0),
+                new Items("vada","breakfast",100.0),
+                new Items("icecream","dessert",100.0)
+        );
+        when(menuService.getCategoryItems("icecream")).thenReturn(listofItems);
+
+        mockmvc.perform(get("/api/v1/menu")).andExpect(status().isOk());
+
+        verify(menuService,times(1)).getCategoryItems("icecream");
+    }
 }
